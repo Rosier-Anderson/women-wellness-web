@@ -1,0 +1,30 @@
+
+
+# Create the setup branch
+git checkout -b setup/project-setup
+git push -u origin setup/project-setup
+
+# Go back to main
+git checkout main
+
+# Create the UI branch
+git checkout -b feature/ui
+git push -u origin feature/ui
+
+
+
+:root {
+  --black: #000000;
+  --background: #EEEDE9;
+  --primary: #F870EF;
+  --secondary: #E2B7CC;
+  --accent: #A94E7A;
+}
+
+Palette Preview
+Color	Hex
+⬛ Black	#000000
+⬜ Off White	#EEEDE9
+🩷 Bright Pink	#F870EF
+🌸 Soft Pink	#E2B7CC
+💜 Mauve	#A94E7A

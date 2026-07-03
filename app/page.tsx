@@ -1,11 +1,11 @@
+import Header from "@/components/ui/Header";
 
 
 export default function Home() {
   return (
     <div className="">
-      <main className="">
-       home
-      </main>
+      <main className=""> 
+     </main>
     </div>
   );
 }
