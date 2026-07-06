@@ -1,31 +1,55 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import {Oswald } from "next/font/google";
+import { Oswald, Inter_Tight } from "next/font/google";
 import { cn } from "@/lib/utils";
 import localFont from "next/font/local";
+const interTight = Inter_Tight(
+ { subsets: ['latin'],
+  style: "normal",
+  weight: ["400","500","600","700","800"],
+  variable: "--font-inter"}
+)
 
 const helveticaNow = localFont({
   src: [
     {
-      path: "../public/fonts/helvetica/helveticanowtext-black-demo.ttf",
+      path: "../public/fonts/helvetica/helveticanowtext-bold-demo.ttf",
       weight: "400",
       style: "normal",
     },
+    // {
+    //   path: "../public/fonts/helvetica/helveticanowtext-blackitalic-demo.ttf",
+    //   weight: "900",
+    //   style: "italic",
+    // },
+    // {
+    //   path: "../public/fonts/helvetica/helveticanowtext-bold-demo.ttf",
+    //   weight: "700",
+    //   style: "normal",
+    // },
+    // {
+    //   path: "../public/fonts/helvetica/helveticanowtext-bolditalic-demo.ttf",
+    //   weight: "700",
+    //   style: "italic",
+    // },
   ],
   variable: "--font-helvetica-now",
 });
 const garet = localFont({
   src: [
     {
-      path: "../public/fonts/garet_woff2/Garet-Thin.woff2",
-      weight: "400",
+      path: "../public/fonts/garet_woff2/Garet-Medium.woff2",
+      weight: "500",
       style: "normal",
     },
   ],
-  variable: "--font-helvetica-now",
+  variable: "--font-garet",
 })
 const oswald = Oswald({
   subsets: ['latin'],
+  style: "normal",
+  weight: ["700"],
+  variable: "--font-oswald"
 })
 
 
@@ -42,10 +66,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-    // style={{ fontFamily: "var(--font-helvetica-now)",
-      
-    //  }}
-      className={cn("h-full", "antialiased", "font-sans")}
+      // style={{ fontFamily: "var(--font-helvetica-now)",
+
+      //  }}
+      className={cn("h-full ", "antialiased", "font-sans",interTight.className,  garet.variable, helveticaNow.variable, oswald.variable )}
+      suppressHydrationWarning
+      data-lt-installed
     >
       <body className="min-h-full flex flex-col ">{children}</body>
     </html>

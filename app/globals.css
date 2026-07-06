@@ -6,49 +6,75 @@
 
 @theme inline {
   /* Default */
-  /* --color-border: var(--border);
+  --color-border: var(--border);
   --color-ring: var(--ring);
-  --font-sans: var(--font-sans); */
+  --font-sans: var(--font-interTight);
+  --font-heading: var(--font-oswald);
   /* Custom */
   --color-black: var(--black);
   --color-background: var(--background);
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary)
 }
 
 :root {
   /* default */
-  /* --border: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0); */
+  --border: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+
 
   /* custom */
   --black: #000000;
   --background: #eeede9;
   --primary: #f870ef;
-  --secondary: #e2b7cc;
+  --secondary: #fce7f3;
   --accent: #a94e7a;
+  --text-primary: #292524;
+  --text-secondary: #2D141F99;
 }
 
 .dark {
  --background: oklch(0.145 0 0); 
 }
 
-/* @layer base {
-  * {
+@layer base {
+  /* * {
     @apply border-border outline-ring/50;
-  }
+  } */
   body {
-    @apply bg-background text-foreground;
+    /* text-foreground; */
+    @apply bg-background text-text-secondary
   }
   html {
-    @apply font-sans;
+    @apply font-sans font-bold ;
+ 
+  
   }
-} */
+ h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply text-text-primary;
+}
+}
+
 
 /* 
-///Inline. pre come with shacn
---color-foreground: var(--foreground);
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
   --font-heading: var(--font-sans);
@@ -88,11 +114,17 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+}
 
-
-/////Roots 
-
- --card: oklch(1 0 0);
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
@@ -121,11 +153,16 @@
   --sidebar-accent: oklch(0.97 0 0);
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0); 
+  --sidebar-ring: oklch(0.708 0 0);
+}
 
-
-  ///Dark
---foreground: oklch(0.985 0 0);
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
@@ -154,5 +191,17 @@
   --sidebar-accent: oklch(0.269 0 0);
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0); 
-*/
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+} */

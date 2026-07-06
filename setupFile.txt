@@ -28,3 +28,14 @@ Color	Hex
 🩷 Bright Pink	#F870EF
 🌸 Soft Pink	#E2B7CC
 💜 Mauve	#A94E7A
+
+Container – a general-purpose wrapper.
+Box – common for layout components.
+Surface – good if it provides styling (background, border, shadow).
+Panel – for grouped content.
+Shell – for a styled outer wrapper.
+Frame – emphasizes that it surrounds content.
+Card – if it resembles a card.
+Slot – if it's mainly a placeholder for arbitrary children.
+ActionContainer – if it usually wraps interactive elements.
+ActionBox – if it's used around buttons or controls.
