@@ -39,7 +39,7 @@ export const Header = () => {
       <header className=" static border-b w-full">
         <Toolbar disableGutters sx={{ display: { xs: "flex", justifyContent: "space-between"} }}>
           {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
-          <Link href="/" className="w-32 h-32 relative p-0 ">
+          <Link href="/" className="size-32 relative p-0 ">
             <Image
               src={"/logos/wellness_gym-removebg-preview.png"}
               alt="Wellness gym logo"
