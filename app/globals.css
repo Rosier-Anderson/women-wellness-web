@@ -34,6 +34,10 @@
   --accent: #a94e7a;
   --text-primary: #292524;
   --text-secondary: #2D141F99;
+
+
+  /* custom text */
+  --text-4-5xl: 2.50rem;
 }
 
 .dark {
@@ -50,8 +54,6 @@
   }
   html {
     @apply font-sans font-bold ;
- 
-  
   }
  h1,
 h2,
@@ -62,7 +64,12 @@ h6 {
   @apply text-text-primary;
 }
 }
+/* Custom css */
+.text-4-5xl {
+  font-size: var(--text-4-5xl);
+  line-height: 1;
 
+}
 
 /* 
 :root {

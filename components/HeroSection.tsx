@@ -1,39 +1,44 @@
-import {GoDotFill} from "react-icons/go";
+import { GoDotFill } from "react-icons/go";
 import Box from "./ui/global/Box";
-
-import {MdArrowRightAlt} from "react-icons/md";
+import { MdArrowRightAlt } from "react-icons/md";
 import Image from "next/image";
-import {Container} from "./ui/global/Container";
-import {SurfaceButton} from "./ui/global/SurfaceButton";
+import { Container } from "./ui/global/Container";
+import { SurfaceLink } from "./ui/global/SurfaceLink";
 
 export default function HeroSection() {
   return (
-    <Container className="m-3">
-      <Box className="">
-        <SurfaceButton className=" bg-secondary w-40 p-3 text-primary">
+    <Container className="flex flex-col gap-2">
+      <Box className=" flex flex-col gap-2">
+        <SurfaceLink inactive className="bg-secondary w-40 text-primary my-6">
           <GoDotFill className="" />
           Why We're Best?
-        </SurfaceButton>
-        <h1 className="text-4xl">Empower Your Body, Elevate Your Mind</h1>
-        <p className="">
-          Join us tranforming your body and mind through our yoga and finess
-          programs.
+        </SurfaceLink>
+        <h1 className="text-4-5xl font-bold leading-[1.3] tracking-tight  sm:text-6xl whitespace-nowrap">
+          Empower Your Body,
+          <wbr />
+          <span className="block text-primary ">Elevate Your Mind</span>
+        </h1>
+
+        <p className="flex-1 min-w-0 text-xl leading-relaxed ">
+          Join us in transforming your body and mind
+          <wbr /> through our yoga and fitness programs.
         </p>
-        <SurfaceButton className=" bg-primary text-white text-md px-4 py-4">
-          <button className="flex items-center justify-between w-full  whitespace-nowrap cursor-pointer ">
-            <span> Become a member</span>
-            <MdArrowRightAlt className="size-5" />
-          </button>
-        </SurfaceButton>
-        <SurfaceButton className="  text-primary">
-          <button className="flex items-center whitespace-nowrap cursor-pointer">
-            Our classes <MdArrowRightAlt className="size-5" />
-          </button>
-        </SurfaceButton>
+        <SurfaceLink href="/" className="bg-primary text-white ">
+          <span className="">Become a member</span>
+          <MdArrowRightAlt className="size-5" />
+        </SurfaceLink>
+        <SurfaceLink href="/" className="text-md text-primary ">
+          Our classes <MdArrowRightAlt className="size-5" />
+        </SurfaceLink>
       </Box>
-      {/* <Box className="">
-        <Image src={} alt=""/>
-      </Box> */}
+      <Box className=" relative w-full h-96  ">
+        <Image
+          src={"/assets/images/gemini_hero_section.jpg"}
+          fill
+          alt="Hero section photo."
+          className="object-cover rounded-2xl"
+        />
+      </Box>
     </Container>
   );
 }

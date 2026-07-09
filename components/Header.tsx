@@ -14,7 +14,6 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { MdArrowRightAlt } from "react-icons/md";
 import Link from "next/link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { SurfaceButton } from "./ui/global/SurfaceButton";
 
 const theme = createTheme({
   typography: {
@@ -36,7 +35,7 @@ export const Header = () => {
   };
   return (
     <ThemeProvider theme={theme}>
-      <header className=" static border-b w-full">
+      <header className=" static border-b border-b-text-secondary/25 w-full">
         <Toolbar disableGutters sx={{ display: { xs: "flex", justifyContent: "space-between"} }}>
           {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
           <Link href="/" className="size-32 relative p-0 ">
@@ -44,6 +43,7 @@ export const Header = () => {
               src={"/logos/wellness_gym-removebg-preview.png"}
               alt="Wellness gym logo"
               fill
+              className="object-cover"
             />
           </Link>
 
@@ -117,7 +117,7 @@ export const Header = () => {
           <Box
             sx={{ display: { xs: "none", md: "flex" }, textAlign: "center" }}
           >
-            <SurfaceButton classname="bg-primary text-white ">
+            <div className="bg-primary rounded-full text-white ">
               <Button
                 color="inherit"
                 sx={{
@@ -131,7 +131,7 @@ export const Header = () => {
                 Join us
                 <MdArrowRightAlt className="size-5" />
               </Button>
-            </SurfaceButton>
+            </div>
           </Box>
         </Toolbar>
       </header>
