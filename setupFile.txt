@@ -39,3 +39,42 @@ Card – if it resembles a card.
 Slot – if it's mainly a placeholder for arbitrary children.
 ActionContainer – if it usually wraps interactive elements.
 ActionBox – if it's used around buttons or controls.
+
+type Props = {
+  // ...
+  containerClassName?: string;
+  contentClassName?: string;
+  imageWrapperClassName?: string;
+  imageClassName?: string;
+};
+
+export function SplitSection({
+  containerClassName,
+  contentClassName,
+  imageWrapperClassName,
+  imageClassName,
+  // ...
+}: Props) {
+  return (
+    <Container className={containerClassName}>
+      <Box className={contentClassName}>
+        {/* ... */}
+      </Box>
+
+      <Box className={imageWrapperClassName}>
+        <Image
+          src={image}
+          fill
+          alt={title}
+          className={imageClassName}
+        />
+      </Box>
+    </Container>
+  );
+}
+
+
+
+//july 10//
+finish our services section 
+finish our trainers section 

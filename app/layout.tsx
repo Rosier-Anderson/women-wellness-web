@@ -9,7 +9,6 @@ const interTight = Inter_Tight(
   weight: ["400","500","600","700","800"],
   variable: "--font-inter"}
 )
-
 const helveticaNow = localFont({
   src: [
     {
@@ -73,7 +72,7 @@ export default function RootLayout({
       suppressHydrationWarning
       data-lt-installed
     >
-      <body className="min-h-full flex flex-col ">{children}</body>
+      <body className="min-h-full max-w-ful flex flex-col ">{children}</body>
     </html>
   );
 }

@@ -35,7 +35,7 @@ export const Header = () => {
   };
   return (
     <ThemeProvider theme={theme}>
-      <header className=" static border-b border-b-text-secondary/25 w-full">
+      <header className=" static border-b border-b-text-secondary/25 w-full px-4">
         <Toolbar disableGutters sx={{ display: { xs: "flex", justifyContent: "space-between"} }}>
           {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
           <Link href="/" className="size-32 relative p-0 ">
@@ -77,7 +77,7 @@ export const Header = () => {
           {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
 
           {/* Mobile hamburger menu — right side */}
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
+          <Box  sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
               aria-label="navigation menu"
@@ -86,16 +86,17 @@ export const Header = () => {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-              <RxHamburgerMenu />
+              <RxHamburgerMenu className="icon-app" />
               {/* <MenuIcon /> */}
             </IconButton>
-            <Menu
+            <Menu className=""
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: "bottom",
                 horizontal: "right",
               }}
+              
               keepMounted
               transformOrigin={{
                 vertical: "top",
@@ -106,7 +107,7 @@ export const Header = () => {
               sx={{ display: { xs: "block", md: "none" } }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem className="" key={page} onClick={handleCloseNavMenu}>
                   <Typography sx={{ textAlign: "center" }}>{page}</Typography>
                 </MenuItem>
               ))}
@@ -129,7 +130,7 @@ export const Header = () => {
                 }}
               >
                 Join us
-                <MdArrowRightAlt className="size-5" />
+                <MdArrowRightAlt className="icon-app" />
               </Button>
             </div>
           </Box>

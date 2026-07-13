@@ -1,15 +1,16 @@
-import { Header } from "@/components/Header";
-import HeroSection from "@/components/HeroSection";
-import StatSection from "@/components/StatSection";
+import { Header } from "@/components/layout/Header";
+import HeroSection from "@/components/layout/HeroSection";
+import ServicesSection from "@/components/layout/ServicesSection";
+import StatSection from "@/components/layout/StatSection";
 
 export default function Home() {
   return (
-    <main id="main-app" className=" flex-1 ">
-      {" "}
+    <main id="main-app" className=" flex-1  ">
       <Header />
-      <div className="flex flex-col mx-4 gap-2">
+      <div className="flex flex-col mx-4 gap-6">
         <HeroSection />
         <StatSection />
+        <ServicesSection />
       </div>
     </main>
   );
