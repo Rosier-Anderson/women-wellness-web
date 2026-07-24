@@ -1,7 +1,8 @@
 export type SplitLayoutProps = {
   badge: string;
-  title: string;
+  title?: string;
   heading: React.ReactElement;
+  subHeading?: React.ReactElement;                                                                                                                                        
   description: React.ReactNode;
   image?: string;
   primaryButton: {
@@ -15,3 +16,4 @@ export type SplitLayoutProps = {
   containerClassName?: string;
   boxClassName?: string;
 };
+

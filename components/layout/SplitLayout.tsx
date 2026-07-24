@@ -11,6 +11,7 @@ export function SplitLayout({
   badge,
   title,
   heading,
+  subHeading,
   description,
   image,
   primaryButton,
@@ -32,7 +33,7 @@ export function SplitLayout({
         )}
 
         {heading}
-
+        {subHeading}
         {description}
 
         <SurfaceLink
@@ -57,7 +58,7 @@ export function SplitLayout({
         <Box className="relative h-80 w-full lg:flex-1">
           <Image
             src={image}
-            alt={title}
+            alt={title ? title : ""}
             fill
             className="rounded-2xl object-cover"
           />

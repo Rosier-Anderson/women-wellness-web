@@ -3,7 +3,7 @@
 @import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
-
+/* use min(400px, 90%) and clamp(32px, 8vw, 80px) min vslue, max value, preffered value*/ 
 @theme inline {
   /* Default */
   --color-border: var(--border);

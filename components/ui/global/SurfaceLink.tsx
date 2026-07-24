@@ -14,7 +14,7 @@ type Props =
 
 export const SurfaceLink = ({ inactive, href, className, ...rest }: Props) => {
   const baseClassName =
-    "flex items-center justify-between whitespace-nowrap rounded-full cursor-pointer size-full p-4 font-semibold";
+    "flex items-center justify-between whitespace-nowrap rounded-full cursor-pointer size-full p-4 font-medium";
 
   const inactiveBaseClassName =
     "flex items-center justify-center whitespace-nowrap rounded-full p-3 font-semibold";

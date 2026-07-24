@@ -15,7 +15,7 @@ function Card({ icon: Icon, heading, description, btn_label }: CardProps) {
       <Icon className="text-4xl text-primary" />
       <div className="mt-6 ">
         <h1 className="text-3xl">{heading}</h1>
-        <p className="text-balance leading-5 text-sm\ font-semibold ">{description}</p>
+        <p className="text-balance leading-5 text-sm font-semibold ">{description}</p>
         <SurfaceLink href="/" className="pl-0 justify-start gap-4 text-primary">
           {btn_label} <MdArrowRightAlt className="icon-app" />
         </SurfaceLink>{" "}
