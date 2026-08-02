@@ -69,7 +69,7 @@ h6 {
 
 }
 .icon-app {
-  @apply size-5
+  @apply size-6
 }
 /* 
 :root {
@@ -212,3 +212,4 @@ body {
     @apply font-sans;
   }
 } */
+
