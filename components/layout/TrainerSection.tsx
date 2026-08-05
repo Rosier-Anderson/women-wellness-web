@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "../ui/global/Container";
 import { SplitLayout } from "./SplitLayout";
-import TrainerCarousel from "../TrainerCarousel";
+import { TrainerCarousel } from "../TrainerCarousel";
 const content = {
   badge: "Our Trainers",
   heading: <h1>Ellie Wilson</h1>,

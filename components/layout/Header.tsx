@@ -35,18 +35,31 @@ export const Header = () => {
   };
   return (
     <ThemeProvider theme={theme}>
-      <header className=" static border-b border-b-text-secondary/25 w-full px-4">
-        <Toolbar disableGutters sx={{ display: { xs: "flex", justifyContent: "space-between"} }}>
-          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
-          <Link href="/" className="size-32 relative p-0 ">
-            <Image
-              src={"/logos/wellness_gym-removebg-preview.png"}
-              alt="Wellness gym logo"
-              fill
-              className="object-cover"
-            />
-          </Link>
-
+      <header className="w-full border-b border-b-text-secondary/25 px-4">
+  <Toolbar
+    disableGutters
+    sx={{
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+    }}
+  >
+    <Link
+      href="/"
+      className="relative h-16 w-32 sm:h-20 sm:w-40 md:h-24 md:w-48 lg:h-28 lg:w-56 shrink-0"
+    >
+      <Image
+        src="/logos/wellness_gym-removebg-preview.png"
+        alt="Wellness Gym logo"
+        fill
+        priority
+        className="object-contain"
+        sizes="(max-width: 640px) 128px,
+               (max-width: 768px) 160px,
+               (max-width: 1024px) 192px,
+               224px"
+      />
+    </Link>
           {/* Desktop center nav links */}
           <Box
             sx={{

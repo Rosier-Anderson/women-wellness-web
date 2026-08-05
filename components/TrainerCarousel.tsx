@@ -1,6 +1,4 @@
-import * as React from "react";
 
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -9,14 +7,16 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { trainers } from "@/constants";
+import { SectionHeader } from "./ui/SectionHeader";
 
-export default function TrainerCarousel() {
+
+export const TrainerCarousel = ()  => {
   return (
-    <Carousel>
-      <CarouselContent>
+    <Carousel className="relative">
+      <CarouselContent className="">
         {trainers.map((trainer) => (
-          <CarouselItem className="flex justify-center" key={trainer.id}>
-            <div className="p-1 ">{trainer.name}</div>
+          <CarouselItem className="flex justify-center " key={trainer.id}>
+          <SectionHeader btnText="Our Trainers" title={trainer.name} description={trainer.description}/>
           </CarouselItem>
         ))}
       </CarouselContent>
