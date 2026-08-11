@@ -71,6 +71,13 @@ h6 {
 .icon-app {
   @apply size-6
 }
+.dot {
+  @apply size-3  
+}
+input, textarea {
+  @apply outline-none
+  /* 32754603 */
+}
 /* 
 :root {
   --background: #ffffff;

@@ -23,7 +23,7 @@ const items = [
   {
     id: 3,
     value: "classes",
-    trigger: "What types of wellness classes do you provide?",
+    trigger: "What wellness classes do you offer?",
     content:
       "We offer a variety of classes including strength training, yoga, mobility sessions, cardio workouts, flexibility training, and wellness programs designed to improve your energy, confidence, and overall health.",
   },
@@ -44,17 +44,18 @@ const items = [
 ];
 export default function AccordionMultiple() {
   return (
-    <Accordion multiple className="">
+    <Accordion multiple className="flex flex-col items-center ">
       {items.map((item) => (
-        <AccordionItem className="bg-secondary m-1 rounded-2xl" key={item.value} value={item.value}>
-          <AccordionTrigger>
-            <span>0{item.id}</span>
-            <h1 className="">{item.trigger}</h1>
+        <AccordionItem className="flex flex-col items-center justify-center bg-secondary m-1 p-4 rounded-xl w-full min-h-20" key={item.value} value={item.value}>
+          <AccordionTrigger className="flex gap-4 items-center">
+            <span className="text-xl sm:text-2xl text-primary">0{item.id}</span>
+            <h1 className="text-xl">{item.trigger}</h1>
           </AccordionTrigger>
           <AccordionContent>
             <p className="">{item.content}</p>
           </AccordionContent>
         </AccordionItem>
+        
       ))}
     </Accordion>
   );

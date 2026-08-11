@@ -6,7 +6,7 @@ import { SectionHeader } from "../ui/SectionHeader";
 
 export default function ContactSection() {
   return (
-    <Container className="">
+    <Container className="flex flex-col gap-12">
       <SectionHeader
         className="flex justify-center items-center"
         btnText="Contact"

@@ -7,13 +7,15 @@ import { SurfaceLink } from "../ui/global/SurfaceLink";
 
 export default function HeroSection() {
   return (
-    <Container id="hero-section" className="flex flex-col sm:flex-row gap-2">
-      <Box className="flex lg:flex-1 flex-col gap-2">
+    <Container id="hero-section" className="flex flex-col sm:flex-row gap-2 mt-10">
+      <Box className="flex lg:flex-1 flex-col gap-2 ">
         <SurfaceLink
           inactive
-          className="bg-secondary w-40 text-primary mt-6 mb-4"
+          className=" flex bg-secondary text-primary "
         >
-          <GoDotFill className="-icon-app" />
+        <GoDotFill 
+  className="dot"
+/>
           Why We're Best?
         </SurfaceLink>
         <h1 className="text-4-5xl font-bold leading-[1.3] tracking-tight sm:text-6xl whitespace-nowrap">

@@ -17,10 +17,10 @@ function StatSection() {
         return (
           <Box
             key={el.id}
-            className="flex justify-between items-center h-32 w-full"
+            className="flex justify-between items-center h-28 w-full"
           >
             <div className=" flex md:flex-col lg:flex-row justify-between items-center w-full px-8">
-              <h1 className="flex items-center text-4-5xl text-primary gap-0.5 font-bold">
+              <h1 className="flex items-center text-4-5xl text-inherit gap-0.5 font-bold">
                 {el.value}
                 <FaPlus className="size-6" />
               </h1>

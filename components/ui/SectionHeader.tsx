@@ -23,15 +23,15 @@ export const SectionHeader = ({
         inactive
         className="bg-secondary w-fit text-primary mt-6 mb-4"
       >
-        <GoDotFill className="-icon-app" />
+        <GoDotFill className="dot" />
         {btnText}
       </SurfaceLink>
 
-      <h1 className="text-4-5xl font-bold leading-[1.3] tracking-tight sm:text-6xl">
+      <h1 className="text-4-5xl font-bold leading-[1.3] tracking-tight sm:text-6xl s">
         {title}
       </h1>
 
-      <p className="flex-1 min-w-0 text-xl leading-relaxed text-center ">
+      <p className="flex-1 min-w-0 text-xl leading-relaxed">
         {description}
       </p>
     </Box>

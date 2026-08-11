@@ -10,9 +10,9 @@ import TrainerSection from "@/components/layout/TrainerSection";
 
 export default function Home() {
   return (
-    <main id="main-app" className="flex-1  ">
+    <main id="main-app" className="flex-1">
       <Header />
-      <div className="flex flex-col mx-5 gap-6">
+      <div className="flex flex-col mx-5 gap-6 ">
         <HeroSection />
         <StatSection />
         <ServicesSection />

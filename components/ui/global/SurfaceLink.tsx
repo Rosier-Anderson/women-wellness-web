@@ -1,43 +1,39 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import React from "react";
+import type { ComponentPropsWithoutRef, HTMLAttributes } from "react";
 
-type Props =
-  | ({
-      inactive: true;
-      href?: never;
-    } & React.HTMLAttributes<HTMLDivElement>)
-  | ({
-      inactive?: false;
-      href: string;
-    } & React.HTMLAttributes<HTMLAnchorElement>);
+type ActiveProps = {
+  inactive?: false;
+} & ComponentPropsWithoutRef<typeof Link>;
 
-export const SurfaceLink = ({ inactive, href, className, ...rest }: Props) => {
+type InactiveProps = {
+  inactive: true;
+} & HTMLAttributes<HTMLDivElement>;
+
+type Props = ActiveProps | InactiveProps;
+
+export const SurfaceLink = (props: Props) => {
   const baseClassName =
-    "flex items-center justify-between whitespace-nowrap rounded-full cursor-pointer size-full p-4 font-medium";
+    "flex items-center justify-between whitespace-nowrap rounded-full cursor-pointer size-full p-4 font-semibold ";
 
   const inactiveBaseClassName =
-    "flex items-center justify-center whitespace-nowrap rounded-full p-3 font-semibold";
+    "flex items-center justify-center whitespace-nowrap rounded-full px-4 py-3 mb-4  font-semibold max-w-45 min-w-16 gap-2";
 
-  if (inactive) {
+  if (props.inactive) {
+    const { className, children, ...rest } = props;
+
     return (
-      <div
-        id="inactiveSurfaceLink-app"
-        className={cn(inactiveBaseClassName, className)} 
-      >
-        {rest.children}
+      <div className={cn(inactiveBaseClassName, className)} {...rest}>
+        {children}
       </div>
     );
   }
 
-  return ( 
-    <Link
-      href={href}
-      id="SurfaceLink-app"
-      className={cn(baseClassName, className)}
-      {...rest}
-    >
-      {rest.children}
+  const { className, children, href, ...rest } = props;
+
+  return (
+    <Link href={href} className={cn(baseClassName, className)} {...rest}>
+      {children}
     </Link>
   );
 };

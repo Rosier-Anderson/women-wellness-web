@@ -1,4 +1,4 @@
-export type SplitLayoutProps = {
+export type SectionIntroProps = {
   badge: string;
   title?: string;
   heading: React.ReactElement;

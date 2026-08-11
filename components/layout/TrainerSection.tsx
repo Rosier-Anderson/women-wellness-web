@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "../ui/global/Container";
-import { SplitLayout } from "./SplitLayout";
+import { SplitLayout } from "./SectionIntro";
 import { TrainerCarousel } from "../TrainerCarousel";
 const content = {
   badge: "Our Trainers",

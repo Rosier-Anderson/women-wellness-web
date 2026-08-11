@@ -14,6 +14,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { MdArrowRightAlt } from "react-icons/md";
 import Link from "next/link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { SurfaceLink } from "../ui/global/SurfaceLink";
 
 const theme = createTheme({
   typography: {
@@ -21,11 +22,15 @@ const theme = createTheme({
   },
 });
 export const Header = () => {
-  const pages = ["Home", "Classes", "Consultation"];
+  const pages = [
+    { id: 1, label: "Home", href: "/" },
+    { id: 2, label: "Classes", href: "/" },
+    { id: 3, label: "Schedule", href: "/" },
+  ];
+
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null,
   );
-
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -35,54 +40,46 @@ export const Header = () => {
   };
   return (
     <ThemeProvider theme={theme}>
-      <header className="w-full border-b border-b-text-secondary/25 px-4">
-  <Toolbar
-    disableGutters
-    sx={{
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-    }}
-  >
-    <Link
-      href="/"
-      className="relative h-16 w-32 sm:h-20 sm:w-40 md:h-24 md:w-48 lg:h-28 lg:w-56 shrink-0"
-    >
-      <Image
-        src="/logos/wellness_gym-removebg-preview.png"
-        alt="Wellness Gym logo"
-        fill
-        priority
-        className="object-contain"
-        sizes="(max-width: 640px) 128px,
+      <header className="w-full border-b border-b-text-secondary/25 px-4 ">
+        <Toolbar
+          disableGutters
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <Link
+            href="/"
+            className="relative h-16 w-32 sm:h-20 sm:w-40 md:h-24 md:w-48 lg:h-28 lg:w-56 shrink-0"
+          >
+            <Image
+              src="/logos/wellness_gym-removebg-preview.png"
+              alt="Wellness Gym logo"
+              fill
+              priority
+              className="object-contain"
+              sizes="(max-width: 640px) 128px,
                (max-width: 768px) 160px,
                (max-width: 1024px) 192px,
                224px"
-      />
-    </Link>
+            />
+          </Link>
           {/* Desktop center nav links */}
           <Box
             sx={{
               flexGrow: 1,
               display: { xs: "none", md: "flex" },
-              justifyContent: "center",
+              justifyContent: "space-between",
+              maxWidth: "20rem",
             }}
           >
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{
-                  my: 2,
-                  display: "block",
-                  textTransform: "none",
-                  color: "inherit",
-                }}
-              >
+              <Link key={page.id} onClick={handleCloseNavMenu} href={page.href}>
                 <span className="text-text-primary text-lg font-bold ">
-                  {page}
+                  {page.label}
                 </span>
-              </Button>
+              </Link>
             ))}
           </Box>
 
@@ -90,7 +87,7 @@ export const Header = () => {
           {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
 
           {/* Mobile hamburger menu — right side */}
-          <Box  sx={{ display: { xs: "flex", md: "none" } }}>
+          <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
               aria-label="navigation menu"
@@ -102,26 +99,55 @@ export const Header = () => {
               <RxHamburgerMenu className="icon-app" />
               {/* <MenuIcon /> */}
             </IconButton>
-            <Menu className=""
+            <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "right",
-              }}
-              
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{ display: { xs: "block", md: "none" } }}
+              keepMounted
+              anchorReference="anchorPosition"
+              anchorPosition={{ top: 0, left: 0 }}
+              slotProps={{
+                paper: {
+                  sx: {
+                    width: "100vw",
+                    height: "100dvh",
+                    maxWidth: "100vw",
+                    maxHeight: "100dvh",
+                    m: 0,
+                    
+                    borderRadius: 0,
+                    bgcolor: "#fce7f3",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "flex-start",
+                    
+                  },
+                },
+              }}
             >
               {pages.map((page) => (
-                <MenuItem className="" key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: "center" }}>{page}</Typography>
+                <MenuItem
+                  key={page.id}
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    width: "100%",
+                    justifyContent: "flex-start",
+                    py: 2,
+                    px: 4,
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      fontSize: "2rem",
+                      fontWeight: 700,
+                      color: "#f870ef",
+                      textAlign: "left",
+                    }}
+                  >
+                    {page.label}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -131,21 +157,10 @@ export const Header = () => {
           <Box
             sx={{ display: { xs: "none", md: "flex" }, textAlign: "center" }}
           >
-            <div className="bg-primary rounded-full text-white ">
-              <Button
-                color="inherit"
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  textTransform: "none",
-                  fontWeight: "bold",
-                }}
-              >
-                Join us
-                <MdArrowRightAlt className="icon-app" />
-              </Button>
-            </div>
+            <SurfaceLink href="/" className="bg-primary text-white">
+              Join us
+              <MdArrowRightAlt className="icon-app" />
+            </SurfaceLink>
           </Box>
         </Toolbar>
       </header>

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import Box from "../ui/global/Box";
 import { SurfaceLink } from "../ui/global/SurfaceLink";
-import { SplitLayoutProps } from "@/types";
+import { SectionIntroProps } from "@/types";
 
 export function SplitLayout({
   badge,
@@ -18,16 +18,16 @@ export function SplitLayout({
   secondaryButton,
   containerClassName,
   boxClassName,
-}: SplitLayoutProps) {
+}: SectionIntroProps) {
   return (
-    <div className={cn(containerClassName, "flex flex-col gap-2 lg:flex-row")}>
+    <div className={cn(containerClassName, "flex flex-col gap-2 lg:flex-row ")}>
       <Box className={cn(boxClassName, "flex flex-1 flex-col gap-2")}>
         {badge && (
           <SurfaceLink
             inactive
-            className="bg-secondary text-primary mt-6 mb-4 w-fit"
+            className="bg-secondary text-primary  "
           >
-            <GoDotFill className="icon-app" />
+            <GoDotFill className="dot" />
             {badge}
           </SurfaceLink>
         )}

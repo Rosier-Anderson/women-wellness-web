@@ -7,7 +7,7 @@ import { SectionHeader } from "../ui/SectionHeader";
 
 export default function FAQSection() {
   return (
-    <Container className="max-w-4xl mx-auto my-0 rounded-2xl ">
+    <Container className="max-w-4xl flex flex-col sm:flex-row mx-auto my-0 ">
       {" "}
       <SectionHeader
         className="flex justify-center items-center"
