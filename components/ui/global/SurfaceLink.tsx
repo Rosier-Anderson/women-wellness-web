@@ -17,8 +17,7 @@ export const SurfaceLink = (props: Props) => {
     "flex items-center justify-between whitespace-nowrap rounded-full cursor-pointer size-full p-4 font-semibold ";
 
   const inactiveBaseClassName =
-    "flex items-center justify-center whitespace-nowrap rounded-full px-4 py-3 mb-4  font-semibold max-w-45 min-w-16 gap-2";
-
+  "flex w-fit items-center justify-center whitespace-nowrap rounded-full px-4 py-3 mb-4 font-semibold gap-2";
   if (props.inactive) {
     const { className, children, ...rest } = props;
 

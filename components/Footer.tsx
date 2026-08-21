@@ -6,30 +6,30 @@ import { SubscribeForm } from "./ui/subscribe-form";
 
 export const Footer = () => {
   const footerLinks = {
-    pagedone: [
+   Navigation: [
       { name: "Home", href: "#" },
       // { name: "About", href: "#" },
       // { name: "Pricing", href: "#" },
       // { name: "Features", href: "#" },
     ],
-    products: [
-      { name: "Plan", href: "#" },
-      // { name: "Icons Assets", href: "#" },
-      // { name: "Responsive Blocks", href: "#" },
-      // { name: "Components Library", href: "#" },
-    ],
-    resources: [
+    // products: [
+    //   { name: "Plan", href: "#" },
+    //   // { name: "Icons Assets", href: "#" },
+    //   // { name: "Responsive Blocks", href: "#" },
+    //   // { name: "Components Library", href: "#" },
+    // ],
+    Other: [
       { name: "FAQs", href: "#" },
       // { name: "Quick Start", href: "#" },
       // { name: "Documentation", href: "#" },
       // { name: "User Guide", href: "#" },
     ],
-    blogs: [
-      { name: "News", href: "#" },
-      // { name: "Tips & Tricks", href: "#" },
-      // { name: "New Updates", href: "#" },
-      // { name: "Events", href: "#" },
-    ],
+    // blogs: [
+    //   { name: "News", href: "#" },
+    //   // { name: "Tips & Tricks", href: "#" },
+    //   // { name: "New Updates", href: "#" },
+    //   // { name: "Events", href: "#" },
+    // ],
   };
 
   const socialLinks = [
@@ -188,6 +188,7 @@ export const Footer = () => {
             <div className="flex mt-4 space-x-4 sm:justify-center lg:mt-0">
               {socialLinks.map((link) => (
                 <Link
+                
                   key={link.label}
                   href={link.href}
                   aria-label={link.label}

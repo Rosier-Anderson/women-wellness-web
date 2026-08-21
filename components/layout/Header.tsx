@@ -24,8 +24,12 @@ const theme = createTheme({
 export const Header = () => {
   const pages = [
     { id: 1, label: "Home", href: "/" },
-    { id: 2, label: "Classes", href: "/" },
-    { id: 3, label: "Schedule", href: "/" },
+    // { id: 2, label: "Products", href: "/product" },
+    { id: 3, label: "Classes", href: "/classes" },
+    { id: 4, label: "Schedule", href: "/schedule" },
+    { id: 5, label: "Membership", href: "/membership" },
+    { id: 6, label: "Consultation", href: "/consultation" },
+    { id: 7, label: "Events", href: "/events" },
   ];
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -71,7 +75,7 @@ export const Header = () => {
               flexGrow: 1,
               display: { xs: "none", md: "flex" },
               justifyContent: "space-between",
-              maxWidth: "20rem",
+              maxWidth: "50rem",
             }}
           >
             {pages.map((page) => (
@@ -115,14 +119,13 @@ export const Header = () => {
                     maxWidth: "100vw",
                     maxHeight: "100dvh",
                     m: 0,
-                    
+
                     borderRadius: 0,
                     bgcolor: "#fce7f3",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "flex-start",
-                    
                   },
                 },
               }}
@@ -157,7 +160,7 @@ export const Header = () => {
           <Box
             sx={{ display: { xs: "none", md: "flex" }, textAlign: "center" }}
           >
-            <SurfaceLink href="/" className="bg-primary text-white">
+            <SurfaceLink href="/membership" className="bg-primary text-white">
               Join us
               <MdArrowRightAlt className="icon-app" />
             </SurfaceLink>

@@ -1,3 +1,5 @@
+import Input from "./global/Input";
+
 export default function ContactForm() {
   return (
     <div className="bg-secondary w-full rounded-2xl p-6">
@@ -10,36 +12,34 @@ export default function ContactForm() {
           <label htmlFor="first-name" className="form-label">
             First Name
           </label>
-          <input
+          <Input
             id="first-name"
             name="first-name"
             type="text"
             placeholder="Enter Your First Name"
-            className="w-full bg-white rounded-full px-4 py-2  h-14 text-lg "
+            className="w-full bg-white px-4 py-2  h-14 text-lg"
           />
         </div>
         <div className="flex flex-col gap-2">
           <label htmlFor="last-name" className="form-label">
             Last Name (Optional)
           </label>
-          <input
+          <Input
             id="last-name"
             name="last-name"
             type="text"
             placeholder="Enter Your Last Name"
-            className="w-full bg-white rounded-full p-2 h-14 text-lg "
           />
         </div>
         <div className="flex flex-col gap-2">
           <label htmlFor="email" className="form-label">
             Email
           </label>
-          <input
+          <Input
             id="email"
             name="email"
             type="email"
             placeholder="example@gmail.com"
-            className="w-full bg-white rounded-full p-2 h-14 text-lg "
           />
         </div>
 
@@ -47,12 +47,12 @@ export default function ContactForm() {
           <label htmlFor="phone" className="form-label">
             Phone Number (Optional)
           </label>
-          <input
+          <Input
             id="phone"
             name="phone"
             type="tel"
             placeholder="+1 514 461 4678"
-            className="w-full bg-white rounded-full p-2 h-14 text-lg "
+            required={false}
           />
         </div>
         <div className="flex flex-col gap-2">
