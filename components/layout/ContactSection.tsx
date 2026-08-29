@@ -2,7 +2,8 @@ import React from "react";
 import { Container } from "../ui/global/Container";
 
 import ContactForm from "../ui/contact-form";
-import { SectionHeader } from "../ui/SectionHeader";
+import SectionHeader from "../ui/SectionHeader";
+
 
 
 export default function ContactSection() {

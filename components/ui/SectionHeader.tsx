@@ -11,7 +11,7 @@ type SectionHeaderProps = {
   className?: string;
 };
 
-export const SectionHeader = ({
+const SectionHeader = ({
   btnText,
   title,
   description,
@@ -27,7 +27,7 @@ export const SectionHeader = ({
         {btnText}
       </SurfaceLink>
 
-      <h1 className="text-4-5xl font-bold leading-[1.3] tracking-tight sm:text-6xl s">
+      <h1 className="text-4-5xl font-bold leading-[1.3] tracking-tight sm:text-6xl">
         {title}
       </h1>
 
@@ -37,3 +37,5 @@ export const SectionHeader = ({
     </Box>
   );
 };
+
+export default SectionHeader;

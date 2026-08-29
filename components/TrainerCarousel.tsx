@@ -7,7 +7,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { trainers } from "@/constants";
-import { SectionHeader } from "./ui/SectionHeader";
+import SectionHeader from "./ui/SectionHeader";
+
 
 
 export const TrainerCarousel = ()  => {
