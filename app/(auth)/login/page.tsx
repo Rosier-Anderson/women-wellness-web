@@ -8,8 +8,8 @@ export default function login() {
     <Box id="app-login" className="">
       <div className="flex flex-col items-center gap-4  ">
         <SectionHeading
-          titleClassName="text-4xl text-6xl"
-          descClassName="text-lg"
+          titleClassName="text-4xl sm:text-6xl"
+          descClassName="text-lg w-sm"
           badge="Account"
           title="Welcome Back"
           desc="Sign in to your account to continue your journey with us."

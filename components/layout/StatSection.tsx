@@ -24,7 +24,7 @@ function StatSection() {
                 {el.value}
                 <FaPlus className="size-6" />
               </h1>
-              <p className="text-md whitespace-nowrap">{el.label}</p>
+              <p className="text-md ">{el.label}</p>
             </div>
           </Box>
         );
