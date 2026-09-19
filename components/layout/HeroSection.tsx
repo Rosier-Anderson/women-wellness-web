@@ -10,7 +10,7 @@ export default function HeroSection() {
       id="hero-section"
       className=" grid grid-cols-1 md:grid-cols-2 gap-2 mt-10 "
     >
-      <Box className=" flex lg:flex-1 w-lg flex-col gap-2 ">
+      <Box className=" flex w-sm sm:w-lg  lg:flex-1 flex-col gap-2 ">
         <SectionHeading
           titleClassName="text-[clamp(2.5rem,8vw,4.5rem)] font-bold leading-[1.3] tracking-tight"
           descClassName="w-sm text-xl leading-relaxed"
@@ -26,7 +26,7 @@ export default function HeroSection() {
           desc=" Join us in transforming your body and mind through our yoga and fitness programs."
         />
 
-        <Box className="flex flex-col sm:flex-row w-sm">
+        <Box className="flex flex-col sm:flex-row ">
           <ActionLinks
             links={[
               {

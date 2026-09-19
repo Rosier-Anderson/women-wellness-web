@@ -2,7 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { SubscribeForm } from "./ui/subscribe-form";
+import { SubscribeForm } from "./ui/forms/subscribe-form";
+
 
 export const Footer = () => {
   const footerLinks = {

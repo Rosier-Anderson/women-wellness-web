@@ -1,7 +1,8 @@
-import Form from "./global/Form";
-import FormInput from "./global/FormInput";
-import Button from "./global/Button";
-import { SurfaceLink } from "./global/SurfaceLink";
+import Button from "../global/Button";
+import Form from "../global/Form";
+import FormInput from "../global/FormInput";
+import { SurfaceLink } from "../global/SurfaceLink";
+
 
 export default function Register() {
   return (

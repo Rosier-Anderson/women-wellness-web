@@ -1,4 +1,4 @@
-import Input from "./global/Input";
+import Input from "../global/Input";
 
 export default function ContactForm() {
   return (

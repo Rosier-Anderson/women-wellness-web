@@ -1,5 +1,6 @@
 import React from "react";
-import Button from "./global/Button";
+import Button from "../global/Button";
+
 
 export const SubscribeForm = () => {
   return (

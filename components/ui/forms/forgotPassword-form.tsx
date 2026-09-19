@@ -1,7 +1,8 @@
 import React from "react";
-import Form from "./global/Form";
-import FormInput from "./global/FormInput";
-import Button from "./global/Button";
+import Form from "../global/Form";
+import FormInput from "../global/FormInput";
+import Button from "../global/Button";
+
 
 export default function ForgotPasswordForm() {
   return (

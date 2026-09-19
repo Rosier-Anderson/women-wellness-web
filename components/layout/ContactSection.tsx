@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "../ui/global/Container";
 
-import ContactForm from "../ui/contact-form";
+import ContactForm from "../ui/forms/contact-form";
 import SectionHeader from "../ui/SectionHeader";
 
 
