@@ -1,4 +1,4 @@
-"use client"
+
 import z, {validate} from "zod";
 const LoginFormSchema = z.object({
   email: z.email({error: "Pleasse enter a valid email"}).trim(),
@@ -19,7 +19,7 @@ export default async function login(prevState: unknown, formData: FormData) {
 
   const {email, password} = validateFormFields.data;
   try {
-  const fetchDB = await fetch("http://localhost:4000/api/v1/auth/login", {
+  const res= await fetch("http://localhost:4000/api/v1/auth/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -30,9 +30,9 @@ export default async function login(prevState: unknown, formData: FormData) {
     }),
   });
 
-  const data = await fetchDB.json();
+  const data = await res.json();
 
-  if (!fetchDB.ok) {
+  if (!res.ok) {
     throw new Error(data.message || "Login failed");
   }
 
