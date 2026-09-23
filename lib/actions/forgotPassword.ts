@@ -20,8 +20,9 @@ export default async function forgotPassword(
   try {
  const authApi = new AuthApi()
     const data = await authApi.forgotPassword(email,);
-    console.log(data.message)
+  return data
   } catch (error) {
     console.log({ "Failed to submit email": error });
+   
   }
 }

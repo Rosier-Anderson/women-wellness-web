@@ -1,5 +1,5 @@
 "use client";
-import React, { useActionState } from "react";
+import React, {useActionState} from "react";
 import Form from "../global/Form";
 import FormInput from "../global/FormInput";
 import Button from "../global/Button";
@@ -10,7 +10,7 @@ export default function ForgotPasswordForm() {
     forgotPassword,
     undefined,
   );
-
+  console.log(state, "state");
   return (
     <Form id="forgot-password-form" action={formAction} className="space-y-6">
       <FormInput
@@ -22,9 +22,14 @@ export default function ForgotPasswordForm() {
       />
       <Button
         type="submit"
-        title="Restore Password"
-        className="w-full md:w-fit"
-      />
+        title={isPending ? "Sending..." : "Restore Password"}
+        disabled={isPending}
+        className="w-full md:w-fit">
+        {isPending && (
+          <span className="mr-2 inline-block h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
+        )}
+        {isPending ? "Sending..." : "Restore Password"}
+      </Button>
     </Form>
   );
 }
