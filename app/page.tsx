@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main id="main-app" className="flex-1">
       <Header />
-      <div className="flex flex-col mx-4 sm:mx-10 gap-6 ">
+      <div className="flex flex-col mx-4 sm:mx-10 gap-16 sm:gap-20 lg:gap-24 mt-10">
         <HeroSection />
         <StatSection />
         <ServicesSection />

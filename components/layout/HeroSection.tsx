@@ -8,12 +8,13 @@ export default function HeroSection() {
   return (
     <Container
       id="hero-section"
-      className=" grid grid-cols-1 md:grid-cols-2 gap-2 mt-10 "
+      className=" grid grid-cols-1 md:grid-cols-2 gap-2 "
     >
-      <Box className=" flex w-sm sm:w-lg  lg:flex-1 flex-col gap-2 ">
+      <Box className=" flex w-full max-w-sm sm:max-w-lg  lg:flex-1 flex-col gap-2 ">
         <SectionHeading
-          titleClassName="text-[clamp(2.5rem,8vw,4.5rem)] font-bold leading-[1.3] tracking-tight"
-          descClassName="w-sm text-xl leading-relaxed"
+          as="h1"
+          titleClassName="text-hero-title font-bold tracking-tight"
+          descClassName="max-w-sm text-xl leading-relaxed"
           badge="Why We're Best?"
           title={
             <>

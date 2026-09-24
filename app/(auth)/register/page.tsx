@@ -8,8 +8,9 @@ export default function register() {
     <Box className="">
       <div className="flex flex-col items-center gap-4  ">
         <SectionHeading
+          as="h1"
           titleClassName="text-4xl sm:text-6xl"
-          descClassName="text-lg w-sm"
+          descClassName="text-lg max-w-sm"
           badge="Account"
           title="Register"
           desc="Create an account to start your journey with us."

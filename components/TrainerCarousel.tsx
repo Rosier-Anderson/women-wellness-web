@@ -22,8 +22,8 @@ export const TrainerCarousel = ()  => {
         ))}
       </CarouselContent>
 
-      <CarouselPrevious className="bg-primary text-white border-none size-12" />
-      <CarouselNext className="bg-primary text-white border-none size-12" />
+      <CarouselPrevious className="bg-primary text-text-primary border-none size-12" />
+      <CarouselNext className="bg-primary text-text-primary border-none size-12" />
     </Carousel>
   );
 }

@@ -1,10 +1,10 @@
-import { Container } from 'lucide-react'
-import React from 'react'
+import ComingSoon from "@/components/layout/ComingSoon";
 
 export default function PricingPage() {
   return (
-    <Container className=''>
-pricing
-    </Container>
-  )
+    <ComingSoon
+      title="Pricing"
+      description="We're finalizing our pricing plans. Check back soon for the full breakdown."
+    />
+  );
 }

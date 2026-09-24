@@ -4,16 +4,26 @@ import Box from "./Box";
 import { cn } from "@/lib/utils";
 interface FormInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
+  error?: React.ReactNode;
 }
-export default function FormInput({ label, id, ...rest }: FormInputProps) {
+export default function FormInput({ label, id, error, ...rest }: FormInputProps) {
   return (
     <Box className="flex flex-col gap-3">
-      <label htmlFor={id}>{label}</label>
+      <label htmlFor={id} className="form-label">{label}</label>
       <Input
         id={id}
-        className={cn("w-full bg-white px-4 py-2 h-14 text-lg")}
+        aria-invalid={!!error}
+        className={cn(
+          "w-full bg-white px-4 py-2 h-14 text-lg",
+          error && "ring-2 ring-red-500",
+        )}
         {...rest}
       />
+      {error && (
+        <span role="alert" className="text-sm text-red-500">
+          {error}
+        </span>
+      )}
     </Box>
   );
 }

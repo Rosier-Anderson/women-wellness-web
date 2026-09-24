@@ -21,15 +21,15 @@ const SectionHeader = ({
     <Box className={cn("flex lg:flex-1 flex-col gap-2", className)}>
       <SurfaceLink
         inactive
-        className="bg-secondary w-fit text-primary mt-6 mb-4"
+        className="bg-secondary w-fit text-accent mt-6 mb-4"
       >
         <GoDotFill className="dot" />
         {btnText}
       </SurfaceLink>
 
-      <h1 className="text-4-5xl font-bold leading-[1.3] tracking-tight sm:text-6xl">
+      <h2 className="text-4-5xl font-bold leading-[1.3] tracking-tight sm:text-6xl">
         {title}
-      </h1>
+      </h2>
 
       <p className="flex-1 min-w-0 text-xl leading-relaxed">
         {description}

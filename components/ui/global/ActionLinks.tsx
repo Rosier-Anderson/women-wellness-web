@@ -25,7 +25,7 @@ export default function ActionLinks({ links }: ActionLinksProps) {
             className={cn(
               "max-h-20",
               link.variant === "primary"
-                ? "bg-primary text-white"
+                ? "bg-primary text-text-primary"
                 : "text-primary",
             )}
           >

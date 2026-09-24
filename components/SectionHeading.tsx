@@ -11,6 +11,8 @@ interface SectionHeadingProps {
   className?: string;
   titleClassName?: string;
   descClassName?: string;
+  /** Heading level for `title`. Use "h1" only for the single main heading of a page. */
+  as?: "h1" | "h2";
 }
 
 export function SectionHeading({
@@ -19,17 +21,18 @@ export function SectionHeading({
   desc,
   titleClassName,
   descClassName,
+  as: Heading = "h2",
 }: SectionHeadingProps) {
   return (
     <>
       {badge && (
-        <SurfaceLink inactive className=" flex bg-secondary text-primary ">
+        <SurfaceLink inactive className=" flex bg-secondary text-accent ">
           <GoDotFill className="dot" />
           {badge}
         </SurfaceLink>
       )}
 
-      {title && <h1 className={cn(titleClassName)}> {title}</h1>}
+      {title && <Heading className={cn(titleClassName)}> {title}</Heading>}
       {desc && <p className={cn(descClassName)}>{desc}</p>}
     </>
   );

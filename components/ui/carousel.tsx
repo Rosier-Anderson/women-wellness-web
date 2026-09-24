@@ -186,13 +186,13 @@ function CarouselPrevious({
       variant={variant}
       size={size}
       className={cn(
-        "absolute touch-manipulation rounded-full bg-red-700",
+        "absolute touch-manipulation rounded-full",
       orientation === "horizontal"
   ? "bottom-4 right-16 inset-y-auto left-2 md:inset-y-0 md:left-2 md:right-auto md:bottom-auto md:my-auto"
   : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
         className
       )}
-      // disabled={!canScrollPrev}
+      disabled={!canScrollPrev}
       onClick={scrollPrev}
       {...props}
     >

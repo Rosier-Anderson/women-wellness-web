@@ -1,6 +1,6 @@
 
 import z from "zod";
-import { AuthApi } from "./api/auth";
+import { AuthApi } from "./auth";
 
 const ForgotPasswordSchema = z.object({
   email: z.email({ error: "Please enter a valid email." }).trim(),

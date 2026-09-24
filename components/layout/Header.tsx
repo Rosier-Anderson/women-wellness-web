@@ -1,172 +1,165 @@
 "use client";
-import {
-  Box,
-  Button,
-  IconButton,
-  Menu,
-  MenuItem,
-  Toolbar,
-  Typography,
-} from "@mui/material";
 import Image from "next/image";
-import React from "react";
-import { RxHamburgerMenu } from "react-icons/rx";
-import { MdArrowRightAlt } from "react-icons/md";
 import Link from "next/link";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
+import { MdArrowRightAlt } from "react-icons/md";
+import { cn } from "@/lib/utils";
 import { SurfaceLink } from "../ui/global/SurfaceLink";
 
-const theme = createTheme({
-  typography: {
-    fontFamily: "var(--font-interTight), Arial, sans-serif",
-  },
-});
+const pages = [
+  { id: 1, label: "Home", href: "/" },
+  { id: 2, label: "Classes", href: "/classes" },
+  { id: 3, label: "Schedule", href: "/schedule" },
+  { id: 4, label: "Membership", href: "/membership" },
+  { id: 5, label: "Consultation", href: "/consultation" },
+  { id: 6, label: "Pricing", href: "/pricing" },
+  { id: 7, label: "Events", href: "/events" },
+];
+
 export const Header = () => {
-  const pages = [
-    { id: 1, label: "Home", href: "/" },
-    // { id: 2, label: "Products", href: "/product" },
-    { id: 3, label: "Classes", href: "/classes" },
-    { id: 4, label: "Schedule", href: "/schedule" },
-    { id: 5, label: "Membership", href: "/membership" },
-    { id: 6, label: "Consultation", href: "/consultation" },
-    { id: 7, label: "Events", href: "/events" },
-  ];
+  const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null,
-  );
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
-  };
+  const closeMenu = () => setMenuOpen(false);
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
+  useEffect(() => {
+    closeMenu();
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") closeMenu();
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [menuOpen]);
+
   return (
-    <ThemeProvider theme={theme}>
-      <header className="w-full border-b border-b-text-secondary/25 px-4 ">
-        <Toolbar
-          disableGutters
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
+    <header className="sticky top-0 z-50 w-full border-b border-b-text-secondary/25 bg-background px-4">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between sm:h-24">
+        <Link
+          href="/"
+          className="relative h-16 w-32 shrink-0 sm:h-20 sm:w-40 md:h-24 md:w-48"
         >
-          <Link
-            href="/"
-            className="relative h-16 w-32 sm:h-20 sm:w-40 md:h-24 md:w-48 lg:h-28 lg:w-56 shrink-0"
-          >
-            <Image
-              src="/logos/wellness_gym-removebg-preview.png"
-              alt="Wellness Gym logo"
-              fill
-              priority
-              className="object-contain"
-              sizes="(max-width: 640px) 128px,
-               (max-width: 768px) 160px,
-               (max-width: 1024px) 192px,
-               224px"
-            />
-          </Link>
-          {/* Desktop center nav links */}
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: { xs: "none", md: "flex" },
-              justifyContent: "space-between",
-              maxWidth: "50rem",
-            }}
-          >
-            {pages.map((page) => (
-              <Link key={page.id} onClick={handleCloseNavMenu} href={page.href}>
-                <span className="text-text-primary text-lg font-bold ">
-                  {page.label}
-                </span>
+          <Image
+            src="/logos/wellness_gym-removebg-preview.png"
+            alt="Wellness Gym logo"
+            fill
+            priority
+            className="object-contain"
+            sizes="(max-width: 640px) 128px,
+             (max-width: 768px) 160px,
+             192px"
+          />
+        </Link>
+
+        {/* Desktop nav */}
+        <nav
+          aria-label="Primary"
+          className="hidden flex-1 items-center justify-center gap-8 md:flex"
+        >
+          {pages.map((page) => {
+            const isActive = pathname === page.href;
+            return (
+              <Link
+                key={page.id}
+                href={page.href}
+                aria-current={isActive ? "page" : undefined}
+                className={cn(
+                  "rounded-md text-lg font-bold transition-colors hover:text-primary",
+                  isActive ? "text-primary" : "text-text-primary",
+                )}
+              >
+                {page.label}
               </Link>
-            ))}
-          </Box>
+            );
+          })}
+        </nav>
 
-          {/* Mobile logo */}
-          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
+        {/* Join Us — desktop */}
+        <div className="hidden shrink-0 md:block">
+          <SurfaceLink href="/membership" className="bg-primary text-text-primary">
+            Join us
+            <MdArrowRightAlt className="icon-app" />
+          </SurfaceLink>
+        </div>
 
-          {/* Mobile hamburger menu — right side */}
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="navigation menu"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
+        {/* Hamburger — mobile */}
+        <button
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded={menuOpen}
+          aria-controls="mobile-nav"
+          onClick={() => setMenuOpen(true)}
+          className="rounded-md p-2 text-text-primary md:hidden"
+        >
+          <RxHamburgerMenu className="icon-app" />
+        </button>
+      </div>
+
+      {/* Mobile nav overlay */}
+      {menuOpen && (
+        <div
+          id="mobile-nav"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Navigation menu"
+          className="fixed inset-0 z-50 flex flex-col bg-secondary md:hidden"
+        >
+          <div className="flex h-20 items-center justify-between px-4">
+            <span className="text-lg font-bold text-text-primary">Menu</span>
+            <button
+              type="button"
+              aria-label="Close navigation menu"
+              onClick={closeMenu}
+              className="rounded-md p-2 text-text-primary"
             >
-              <RxHamburgerMenu className="icon-app" />
-              {/* <MenuIcon /> */}
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              keepMounted
-              anchorReference="anchorPosition"
-              anchorPosition={{ top: 0, left: 0 }}
-              slotProps={{
-                paper: {
-                  sx: {
-                    width: "100vw",
-                    height: "100dvh",
-                    maxWidth: "100vw",
-                    maxHeight: "100dvh",
-                    m: 0,
+              <RxCross2 className="icon-app" />
+            </button>
+          </div>
 
-                    borderRadius: 0,
-                    bgcolor: "#fce7f3",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "flex-start",
-                  },
-                },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem
-                  key={page.id}
-                  onClick={handleCloseNavMenu}
-                  sx={{
-                    width: "100%",
-                    justifyContent: "flex-start",
-                    py: 2,
-                    px: 4,
-                  }}
-                >
-                  <Typography
-                    sx={{
-                      fontSize: "2rem",
-                      fontWeight: 700,
-                      color: "#f870ef",
-                      textAlign: "left",
-                    }}
-                  >
-                    {page.label}
-                  </Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-
-          {/* Join Us button — desktop */}
-          <Box
-            sx={{ display: { xs: "none", md: "flex" }, textAlign: "center" }}
+          <nav
+            aria-label="Mobile primary"
+            className="flex flex-1 flex-col items-start justify-center gap-2 overflow-y-auto px-8 pb-20"
           >
-            <SurfaceLink href="/membership" className="bg-primary text-white">
+            {pages.map((page) => {
+              const isActive = pathname === page.href;
+              return (
+                <Link
+                  key={page.id}
+                  href={page.href}
+                  aria-current={isActive ? "page" : undefined}
+                  className={cn(
+                    "py-2 text-3xl font-bold transition-colors",
+                    isActive ? "text-primary" : "text-text-primary",
+                  )}
+                >
+                  {page.label}
+                </Link>
+              );
+            })}
+
+            <SurfaceLink
+              href="/membership"
+              className="mt-6 w-fit bg-primary text-text-primary"
+            >
               Join us
               <MdArrowRightAlt className="icon-app" />
             </SurfaceLink>
-          </Box>
-        </Toolbar>
-      </header>
-    </ThemeProvider>
+          </nav>
+        </div>
+      )}
+    </header>
   );
 };

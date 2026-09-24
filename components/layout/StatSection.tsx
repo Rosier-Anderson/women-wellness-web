@@ -12,19 +12,19 @@ function StatSection() {
     { id: 3, value: "4.9/5", label: "Average Opinion" },
   ];
   return (
-    <Container id="stat-section" className="sm:flex sm:justify-center bg-secondary text-primary rounded-2xl sm:divide-x max-sm:divide-y divide-text-secondary/25 ">
+    <Container id="stat-section" className="flex flex-col sm:flex-row sm:justify-center bg-secondary text-accent rounded-2xl divide-y sm:divide-x sm:divide-y-0 divide-text-secondary/25 ">
       {achievements.map((el) => {
         return (
           <Box
             key={el.id}
-            className="flex justify-between items-center h-28 w-full"
+            className="flex items-center justify-center py-6 sm:h-28 sm:py-0 w-full"
           >
-            <div className=" flex md:flex-col lg:flex-row justify-between items-center w-full px-8">
-              <h1 className="flex items-center text-4-5xl text-inherit gap-0.5 font-bold">
+            <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-1 sm:gap-2 w-full px-8 text-center sm:text-left">
+              <p className="flex items-center text-4-5xl text-inherit gap-0.5 font-bold">
                 {el.value}
                 <FaPlus className="size-6" />
-              </h1>
-              <p className="text-md ">{el.label}</p>
+              </p>
+              <p className="text-base">{el.label}</p>
             </div>
           </Box>
         );

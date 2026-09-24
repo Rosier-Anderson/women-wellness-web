@@ -112,7 +112,7 @@ export const Footer = () => {
   ];
 
   return (
-    <footer className="w-full bg-white dark:bg-black ">
+    <footer className="w-full bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid sm:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-8 py-10 max-sm:max-w-sm max-sm:mx-auto gap-y-8 ">
           <div className="col-span-full mb-10 lg:col-span-2 lg:mb-0">
@@ -132,18 +132,16 @@ export const Footer = () => {
                224px"
               />
             </Link>
-            <h1>
-              {" "}
+            <p className="mt-2 font-semibold text-text-primary">
               <Link href="#" className="flex justify-center lg:justify-start">
-                {" "}
-                Wommen Wellness
+                Women Wellness
               </Link>
-            </h1>
-            <address className="">
-              <h1>123 Design Avenue, San Diego, CA</h1>
+            </p>
+            <address className="not-italic">
+              <p>123 Design Avenue, San Diego, CA</p>
             </address>
             <SubscribeForm/>
-            <p className="">
+            <p className="mt-3 text-xs text-text-secondary">
               * By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.
             </p>
           </div>
@@ -151,7 +149,7 @@ export const Footer = () => {
           {/* Link Columns */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title} className="lg:mx-auto text-left ">
-              <h4 className="text-lg text-gray-900 dark:text-white font-medium mb-7 capitalize">
+              <h4 className="text-lg text-gray-900 font-medium mb-7 capitalize">
                 {title}
               </h4>
               <ul className="text-sm transition-all duration-500">
@@ -162,7 +160,7 @@ export const Footer = () => {
                   >
                     <Link
                       href={link.href}
-                      className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                      className="text-gray-600 hover:text-primary"
                     >
                       {link.name}
                     </Link>
@@ -174,26 +172,22 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="py-7 border-t border-gray-200 dark:border-gray-700">
+        <div className="py-7 border-t border-gray-200">
           <div className="flex items-center justify-center flex-col lg:justify-between lg:flex-row">
-            <span className="text-sm text-gray-500 dark:text-gray-400">
+            <span className="text-sm text-gray-500">
               ©{" "}
-              <Link
-                href="#"
-                className="hover:text-indigo-600 dark:hover:text-indigo-400"
-              >
-              Wommen Wellness Gym
+              <Link href="#" className="hover:text-primary">
+              Women Wellness Gym
               </Link>{" "}
               2026, All rights reserved.
             </span>
             <div className="flex mt-4 space-x-4 sm:justify-center lg:mt-0">
               {socialLinks.map((link) => (
                 <Link
-                
                   key={link.label}
                   href={link.href}
                   aria-label={link.label}
-                  className="w-9 h-9 rounded-full bg-gray-700 dark:bg-gray-600 flex justify-center items-center hover:bg-indigo-600 dark:hover:bg-indigo-500 transition-colors duration-300"
+                  className="w-9 h-9 rounded-full bg-gray-700 flex justify-center items-center hover:bg-primary transition-colors duration-300"
                 >
                   {link.icon}
                 </Link>

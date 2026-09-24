@@ -14,12 +14,12 @@ type Props = ActiveProps | InactiveProps;
 
 export const SurfaceLink = (props: Props) => {
   const baseClassName =
-    "flex items-center justify-between whitespace-nowrap rounded-full cursor-pointer size-full p-4 font-semibold ";
+    "flex items-center justify-between whitespace-nowrap rounded-full cursor-pointer size-full p-4 font-semibold transition-opacity hover:opacity-90 active:opacity-80 ";
 
   const inactiveBaseClassName =
   "flex w-fit items-center justify-center whitespace-nowrap rounded-full px-4 py-3 mb-4 font-semibold gap-2";
   if (props.inactive) {
-    const { className, children, ...rest } = props;
+    const { className, children, inactive: _inactive, ...rest } = props;
 
     return (
       <div className={cn(inactiveBaseClassName, className)} {...rest}>
@@ -36,11 +36,3 @@ export const SurfaceLink = (props: Props) => {
     </Link>
   );
 };
-{
-  /* <SurfaceButton className="bg-primary text-white text-md  ">
-          <button className="bg-amber-950 flex items-center justify-between size-full   whitespace-nowrap cursor-pointer ">
-            <span className=""> Become a member</span>
-            <MdArrowRightAlt className="" />
-          </button>
-        </SurfaceButton> */
-}

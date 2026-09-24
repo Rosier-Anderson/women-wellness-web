@@ -6,7 +6,7 @@ export default function Form({ className, children, ...rest }: FormProps) {
   return (
     <form
       className={cn(
-        "space-y-3 bg-secondary rounded-2xl w-sm sm:w-2xl p-8 mt-10",
+        "space-y-3 bg-secondary rounded-2xl w-full max-w-sm sm:max-w-2xl p-8 mt-10",
         className,
       )}
       {...rest}

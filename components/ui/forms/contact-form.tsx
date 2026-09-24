@@ -1,4 +1,5 @@
 import Input from "../global/Input";
+import Button from "../global/Button";
 
 export default function ContactForm() {
   return (
@@ -29,6 +30,7 @@ export default function ContactForm() {
             name="last-name"
             type="text"
             placeholder="Enter Your Last Name"
+            required={false}
           />
         </div>
         <div className="flex flex-col gap-2">
@@ -66,12 +68,7 @@ export default function ContactForm() {
             className="w-full bg-white rounded-2xl p-2 min-h-32 text-lg "
           ></textarea>
         </div>
-        <button
-          type="submit"
-          className="bg-primary text-white w-32 h-14 rounded-4xl font-bold "
-        >
-          Submit
-        </button>
+        <Button type="submit" title="Submit" className="w-32" />
       </form>
     </div>
   );

@@ -8,8 +8,9 @@ export default function ForgotPassword() {
     <Box id="forgotPassword-app" className="">
       <div className="flex flex-col items-center gap-4  ">
         <SectionHeading
+          as="h1"
           titleClassName="text-4xl sm:text-6xl"
-          descClassName="text-lg w-sm "
+          descClassName="text-lg max-w-sm "
           badge="Account"
           title="Forgot Password"
           desc="Enter your email address and we’ll send you a link to reset your password."

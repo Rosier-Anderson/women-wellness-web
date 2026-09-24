@@ -47,13 +47,13 @@ export default function AccordionMultiple() {
     <Accordion multiple className="flex flex-col items-center ">
       {items.map((item) => (
         <AccordionItem
-          className="flex flex-col justify-center bg-secondary m-1 p-4 rounded-2xl w-sm sm:w-3xl min-h-20"
+          className="flex w-full max-w-sm flex-col justify-center bg-secondary m-1 p-4 rounded-2xl sm:max-w-3xl min-h-20"
           key={item.value}
           value={item.value}
         >
           <AccordionTrigger className="flex gap-4 items-center">
-            <span className="text-xl sm:text-2xl text-primary">0{item.id}</span>
-            <h1 className="text-xl">{item.trigger}</h1>
+            <span className="text-xl sm:text-2xl text-accent">0{item.id}</span>
+            <h3 className="text-xl">{item.trigger}</h3>
           </AccordionTrigger>
           <AccordionContent>
             <p className="">{item.content}</p>
