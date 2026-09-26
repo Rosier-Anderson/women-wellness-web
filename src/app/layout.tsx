@@ -13,7 +13,7 @@ const interTight = Inter_Tight({
 const helveticaNow = localFont({
   src: [
     {
-      path: "../public/fonts/helvetica/helveticanowtext-bold-demo.ttf",
+      path: "../../public/fonts/helvetica/helveticanowtext-bold-demo.ttf",
       weight: "400",
       style: "normal",
     },
@@ -38,7 +38,7 @@ const helveticaNow = localFont({
 const garet = localFont({
   src: [
     {
-      path: "../public/fonts/garet_woff2/Garet-Medium.woff2",
+      path: "../../public/fonts/garet_woff2/Garet-Medium.woff2",
       weight: "500",
       style: "normal",
     },

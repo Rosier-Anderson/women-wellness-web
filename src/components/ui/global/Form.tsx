@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import React from "react";
-interface FormProps extends React.FormHTMLAttributes<HTMLFormElement> {}
+interface FormProps extends React.FormHTMLAttributes<HTMLFormElement> {
+}
 
 export default function Form({ className, children, ...rest }: FormProps) {
   return (

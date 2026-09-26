@@ -5,3 +5,11 @@ const API_BASE = process.env.BASE_API_URI || "http://localhost:4000/api/v1";
 export default axios.create({
   baseURL: API_BASE,
 });
+
+export const axiosPrivate = axios.create({
+  baseURL: API_BASE,
+  headers: {
+    "Content-Type": "application/json",
+  },
+  withCredentials: true,
+});
