@@ -1,0 +1,16 @@
+import { Footer } from "@/components/layout/Footer";
+import { Header } from "@/components/layout/Header";
+
+export default function ProtectedLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <main className="flex min-h-screen flex-col">
+      <Header />
+      <div className="flex-1">{children}</div>
+      <Footer />
+    </main>
+  );
+}

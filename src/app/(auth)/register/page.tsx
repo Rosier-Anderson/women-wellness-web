@@ -1,5 +1,5 @@
-import { SectionHeading } from "@/components/SectionHeading";
-import Register from "@/components/ui/forms/register-form";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import Register from "@/components/forms/register-form";
 import Box from "@/components/ui/global/Box";
 import React from "react";
 

@@ -2,7 +2,7 @@ import React from "react";
 import Input from "./Input";
 import Box from "./Box";
 import {cn} from "@/lib/utils";
-interface FormInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface FormInputProps extends React.ComponentProps<"input"> {
   label: string;
   error?: React.ReactNode;
 }

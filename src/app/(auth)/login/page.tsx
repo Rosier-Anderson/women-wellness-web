@@ -1,6 +1,6 @@
-import { SectionHeading } from "@/components/SectionHeading";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import Box from "@/components/ui/global/Box";
-import LoginForm from "@/components/ui/forms/login-form";
+import LoginForm from "@/components/forms/login-form";
 import React from "react";
 
 export default function login() {

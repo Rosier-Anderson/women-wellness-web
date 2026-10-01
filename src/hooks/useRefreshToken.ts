@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import useAuth from "./useAuth";
 import axios from "@/api/axios";
 
@@ -16,9 +15,13 @@ const useRefreshToken = () => {
       },
     );
     setAuth((prev) => {
-      console.log(JSON.stringify(prev));
-      console.log(res);
-      return {...prev, accessToken: res.data?.accessToken};
+      // console.log(JSON.stringify(prev));
+      // console.log(res);
+      return {
+        ...prev,
+        userInfo: res?.data?.userInfo,
+        accessToken: res.data?.accessToken,
+      };
     });
     return res.data.accessToken;
   };

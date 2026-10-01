@@ -1,9 +1,11 @@
-import type { Metadata } from "next";
+import type {Metadata} from "next";
 import "./globals.css";
-import { Oswald, Inter_Tight } from "next/font/google";
-import { cn } from "@/lib/utils";
+import {Oswald, Inter_Tight} from "next/font/google";
+import {cn} from "@/lib/utils";
 import localFont from "next/font/local";
-import { NextFontWithVariable } from "next/dist/compiled/@next/font";
+import {NextFontWithVariable} from "next/dist/compiled/@next/font";
+import {AuthProvider} from "@/context/AuthProvider";
+import PersistLogin from "@/components/auth/PersistLogin";
 const interTight = Inter_Tight({
   subsets: ["latin"],
   style: "normal",
@@ -79,8 +81,14 @@ export default function RootLayout({
       )}
       suppressHydrationWarning
       data-lt-installed
-    >
-      <body className="min-h-full max-w-full flex flex-col ">{children}</body>
+      cz-shortcut-listen="true">
+      <body
+        suppressHydrationWarning
+        className="min-h-full max-w-full flex flex-col ">
+        <AuthProvider>
+          <PersistLogin>{children}</PersistLogin>
+        </AuthProvider>
+      </body>
     </html>
   );
 }

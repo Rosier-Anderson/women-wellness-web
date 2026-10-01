@@ -1,5 +1,5 @@
-import { SectionHeading } from "@/components/SectionHeading";
-import ForgotPasswordForm from "@/components/ui/forms/forgotPassword-form";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import ForgotPasswordForm from "@/components/forms/forgotPassword-form";
 import Box from "@/components/ui/global/Box";
 import React from "react";
 
